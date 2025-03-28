@@ -3,4 +3,5 @@
 *.json linguist-vendored
 *.html linguist-vendored
 *.css linguist-vendored
+__pycache__/
 frontend/* linguist-vendored
