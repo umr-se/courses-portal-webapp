@@ -8,7 +8,7 @@ Courses Portal WebApp is a FastAPI-based web application designed for role-based
 ### 👤 User
 - Registers on the platform and awaits Admin approval.
 - Once approved, users can log in and enroll in available courses.
-- Users can provide feedback 💬, which Admins and Coordinators can respond to.
+- Users can provide feedback, which Admins and Coordinators can respond to.
 
 ### 🛠️ Coordinator
 - Views approved users.
@@ -24,12 +24,12 @@ Courses Portal WebApp is a FastAPI-based web application designed for role-based
 - Handles feedback responses.
 
 ## 🔐 Security & Authentication
-Implemented **JWT-based Authentication & Authorization** 🔑 to ensure secure access control.
+Implemented **JWT-based Authentication & Authorization** to ensure secure access control.
 
 ## 💻 Tech Stack
-- **Backend:** FastAPI ⚡
-- **Database:** MySQL 🗄️
-- **Frontend:** Flask, HTML, CSS 🎨
+- **Backend:** FastAPI 
+- **Database:** MySQL 
+- **Frontend:** Flask, HTML, CSS 
 
 ## 💬 Key Feature
 A **real-time feedback chat system** enables seamless communication between users, coordinators, and admins.
