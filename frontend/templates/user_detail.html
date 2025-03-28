@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Details</title>
+</head>
+<body>
+    <h2>User Details</h2>
+    <a href="{{ url_for('course_detail', course_id=request.args.get('course_id')) }}">Back to Course</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <td>{{ user.id }}</td>
+        </tr>
+        <tr>
+            <th>Username</th>
+            <td>{{ user.username }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+            <th>Role</th>
+            <td>{{ user.role|title }}</td>
+        </tr>
+        <tr>
+            <th>Approval Status</th>
+            <td>
+                {% if user.is_approved %}
+                    ✅ Approved
+                {% else %}
+                    ❌ Not Approved
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="dashboard-header">
+        <h2>Manage Feedback</h2>
+        <a href="{{ url_for('admin_dashboard' if session.get('role') == 'admin' else 'coordinator_dashboard') }}" 
+           class="btn btn-secondary">Back to Dashboard</a>
+    </div>
+
+    <div class="dashboard-section">
+        <div class="dashboard-header">
+            <h3>All Feedback</h3>
+            <!-- <a href="{{ url_for('view_feedback') }}" class="btn btn-outline-primary">View My Feedback</a> -->
+        </div>
+
+        {% for item in feedback %}
+        <div class="feedback-item">
+            <div class="feedback-meta">
+                <span class="feedback-user">{{ item.user_email }}</span>
+                <span class="feedback-date">{{ item.timestamp }}</span>
+            </div>
+            <p class="feedback-content">{{ item.message }}</p>
+            
+            {% if item.response %}
+            <div class="feedback-response">
+                <div class="response-meta">
+                    <span class="response-role">{{ item.responder_email }}</span>
+                </div>
+                <p class="response-content">{{ item.response }}</p>
+            </div>
+            {% else %}
+            <form class="feedback-form" action="{{ url_for('respond_to_feedback', feedback_id=item.id) }}" method="post">
+                <textarea class="form-control" name="response" rows="3" required></textarea>
+                <button type="submit" class="btn btn-primary mt-2">Submit Response</button>
+            </form>
+            {% endif %}
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <p>No feedback submissions found.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

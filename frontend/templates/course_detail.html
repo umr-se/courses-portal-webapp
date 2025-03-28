@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="dashboard-header">
+        <h2>{{ course.name }}</h2>
+        <a href="javascript:history.back()" class="btn btn-secondary">Cancel</a>
+    </div>
+
+    <div class="course-details-section">
+        <div class="course-info-card">
+            <h3>Course Details</h3>
+            <div class="course-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Description:</span>
+                    <p>{{ course.description }}</p>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Scheduled At:</span>
+                    <p>{{ course.scheduled_at }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="enrollment-section">
+            <h3>Enrolled Users ({{ enrolled_users|length }})</h3>
+            <div class="enrolled-users-list">
+                {% if enrolled_users %}
+                    {% for user in enrolled_users %}
+                    <div class="user-card">
+                        <span class="user-avatar">👤</span>
+                        <div class="user-info">
+                            <div class="username">{{ user.username }}</div>
+                            <div class="user-email">{{ user.email }}</div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="user-card">
+                        <span class="user-avatar">👤</span>
+                        <div class="user-info">
+                            <div class="username">You are enrolled</div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

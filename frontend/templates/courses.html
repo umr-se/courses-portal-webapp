@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="dashboard-header">
+        <h2>Courses</h2>
+        <a href="{{ url_for('admin_dashboard' if session.get('role') == 'admin' else 'coordinator_dashboard') }}" 
+           class="btn btn-secondary">Back to Dashboard</a>
+    </div>
+
+    <div class="dashboard-section">
+        <div class="section-header">
+            <h3>Available Courses ({{ courses|length }})</h3>
+        </div>
+
+        <table class="dashboard-table">
+            <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Description</th>
+                    <th>Scheduled At</th>
+                    <th>Enrolled Users</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for course in courses %}
+                <tr>
+                    <td>{{ course.name }}</td>
+                    <td>{{ course.description }}</td>
+                    <td>{{ course.scheduled_at }}</td>
+                    <td>
+                        <a href="{{ url_for('course_detail', course_id=course.id) }}" class="btn btn-sm btn-outline-primary">
+                            {{ course.users_joined }} Users
+                        </a>
+                    </td>
+                    <td>
+                        <div class="action-links">
+                            <a href="{{ url_for('course_detail', course_id=course.id) }}" class="action-link">View</a>
+                            {% if role == 'admin' %}
+                                <a href="{{ url_for('edit_course', course_id=course.id) }}" class="action-link">Edit</a>
+                                <a href="{{ url_for('delete_course', course_id=course.id) }}" class="action-link">Delete</a>
+                            {% endif %}
+                            {% if role == 'user' and course.id not in enrolled_courses %}
+                                <a href="{{ url_for('enroll_course', course_id=course.id) }}" class="action-link">Enroll</a>
+                            {% endif %}
+                        </div>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5" class="text-center py-4">No courses found</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

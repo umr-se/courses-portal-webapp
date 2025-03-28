@@ -1,0 +1,624 @@
+/* CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+nav {
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+/* Content Container */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Form Styles */
+form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Message Styles */
+p {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    nav {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Card Styles */
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Icon Styles */
+.icon {
+    font-size: 50px;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+h1{
+    text-align: center;
+    color: #333;
+    width: 100%;
+    margin: 5rem 0 5rem;
+}
+/* Heading Styles */
+
+/* Add these styles to your existing style.css */
+
+/* Dashboard Header */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.dashboard-header h2 {
+    margin: 0;
+    color: #2c3e50;
+}
+
+/* Section Styling */
+.dashboard-section {
+    margin: 2rem 0;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dashboard-section h3 {
+    color: #007bff;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+}
+
+/* Table Improvements */
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.dashboard-table th {
+    background-color: #007bff;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+}
+
+.dashboard-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.dashboard-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Action Links */
+.action-link {
+    display: inline-block;
+    margin: 0 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.action-link:hover {
+    background-color: #e9ecef;
+    text-decoration: none;
+}
+
+/* Status Indicators */
+.status-approved {
+    color: #28a745;
+    font-weight: 500;
+}
+
+.status-pending {
+    color: #dc3545;
+    font-weight: 500;
+}
+
+/* Create Course Button */
+.create-button {
+    display: inline-block;
+    margin: 1rem 0;
+    padding: 0.5rem 1.5rem;
+    background-color: #28a745;
+    color: white !important;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.create-button:hover {
+    background-color: #218838;
+    text-decoration: none;
+}
+
+/* Search Form Styling */
+.search-form {
+    margin: 1rem 0;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.search-form {
+    margin: 1rem 0;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: 100%;
+}
+
+.search-form input[type="text"] {
+    min-width: 200px; /* Ensures input has a reasonable minimum size */
+    max-width: 400px;
+    margin-bottom: 5px;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-form button {
+    /* white-space: nowrap; Prevents button text from breaking */
+    padding: 0.5rem 1rem; /* Ensures proper spacing inside button */
+    margin-bottom: 5px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .search-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+
+/* Edit User Page Specific Styles */
+.dashboard-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-check-input {
+    margin: 0;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.form-actions {
+    margin-top: 2rem;
+    text-align: right;
+}
+
+
+/* Course Details Specific Styles */
+.course-details-section {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.course-info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.meta-item {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.meta-label {
+    display: block;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.enrollment-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.enrolled-users-list {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.user-card {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    transition: transform 0.2s ease;
+}
+
+.user-card:hover {
+    transform: translateX(5px);
+    background: #e9ecef;
+}
+
+.user-avatar {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.user-info {
+    flex-grow: 1;
+}
+
+.username {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.user-email {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 2rem;
+    color: #6c757d;
+    border: 2px dashed #dee2e6;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .course-details-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .user-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .user-avatar {
+        margin-bottom: 0.5rem;
+    }
+}
+
+
+/* Feedback Management Styles */
+.feedback-item {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.feedback-item:hover {
+    transform: translateY(-2px);
+}
+
+.feedback-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.feedback-user {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.feedback-date {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.feedback-content {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    line-height: 1.6;
+}
+
+.feedback-response {
+    margin: 1.5rem 0 0 2rem;
+    padding: 1rem;
+    border-left: 3px solid #007bff;
+    background: #f8f9fa;
+    border-radius: 0 6px 6px 0;
+}
+
+.response-meta {
+    margin-bottom: 0.5rem;
+}
+
+.response-role {
+    font-size: 0.9rem;
+    color: #28a745;
+    font-weight: 500;
+}
+
+.feedback-form textarea {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 2rem;
+    color: #6c757d;
+    border: 2px dashed #dee2e6;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Existing button styles will be inherited */
+/* My Feedback Specific Styles */
+.feedback-form {
+    margin-top: 1.5rem;
+}
+
+.feedback-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 120px;
+}
+
+.no-response {
+    padding: 1rem;
+    background: #fff3cd;
+    border-radius: 4px;
+    margin-top: 1rem;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+/* Existing styles from previous feedback pages will apply to: */
+/* .feedback-item, .feedback-meta, .feedback-content, etc. */
+
+.cntr {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically (if needed) */
+}
+
+
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.dashboard-header h2 {
+    margin: 0;
+    color: #2c3e50;
+}
+
+/* Section Styling */
+.dashboard {
+    margin: 2rem 0;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dashboard h3 {
+    color: #007bff;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+}
+
+/* Ensure the container does not apply unwanted centering */
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Ensures text aligns to the left */
+}
+
+.info p {
+    font-size: 16px; /* Adjusts text size */
+    margin: 2px 0; /* Adds spacing between lines */
+    color: #000; /* Ensures black text */
+    text-align: left; /* Forces text to align left */
+    display: block; /* Ensures proper block-level behavior */
+}
+
+.info p strong {
+    font-weight: bold; /* Makes 'Email:' and 'Role:' bold */
+}
+
+.profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-photo img {
+    width: 80px; /* Adjust size as needed */
+    height: 80px;
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures proper image scaling */
+    border: 2px solid #ddd; /* Optional border */
+}
+
+
+
+

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="dashboard-header">
+        <h2>My Feedback</h2>
+        <a href="{{ url_for('user_dashboard') }}" class="btn btn-secondary">Back to Dashboard</a>
+    </div>
+
+    <div class="dashboard-section">
+        <h3>Submit New Feedback</h3>
+        <form class="feedback-form" action="{{ url_for('submit_feedback') }}" method="post">
+            <textarea class="form-control" name="message" rows="4" required></textarea>
+            <button type="submit" class="btn btn-primary mt-2">Submit Feedback</button>
+        </form>
+    </div>
+
+    <div class="dashboard-section">
+        <h3>Feedback History</h3>
+        {% for item in feedback if item.user_email == session.email %}
+        <div class="feedback-item">
+            <div class="feedback-meta">
+                <span class="feedback-date">Submitted on {{ item.timestamp }}</span>
+            </div>
+            <p class="feedback-content">{{ item.message }}</p>
+            
+            {% if item.response %}
+            <div class="feedback-response">
+                <div class="response-meta">
+                    <span class="response-role">Response from {{ item.responder_email }}</span>
+                </div>
+                <p class="response-content">{{ item.response }}</p>
+            </div>
+            {% else %}
+            <div class="no-response">
+                <p>No response yet</p>
+            </div>
+            {% endif %}
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <p>You haven't submitted any feedback yet.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
